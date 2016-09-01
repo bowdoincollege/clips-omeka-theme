@@ -73,15 +73,21 @@ foreach($films as $film) {
 
 <select class="c-menu" id="c-directors-menu">
 <option disabled="disabled" selected="selected">Directors</option><option>
-<?php echo implode("</option>\n<option>", $filmDirectors); ?>
+<?php
+	$sortedFilmDirectors = $filmDirectors;
+	sort($sortedFilmDirectors);
+	echo implode("</option>\n<option>", $sortedFilmDirectors); 
+?>
 </option></select>
 
 <select class="c-menu" id="c-titles-menu">
 <option disabled="disabled" selected="selected">Titles</option>
 <?php 
-foreach ($filmTitles as $filmId => $filmTitle) {
-	echo "<option value=\"$filmId\">$filmTitle</option>\n";	
-}
+	$sortedFilmTitles = $filmTitles;
+	sort($sortedFilmTitles);
+	foreach ($sortedFilmTitles as $filmId => $filmTitle) {
+		echo "<option value=\"$filmId\">$filmTitle</option>\n";	
+	}
 ?>
 </select>
 
