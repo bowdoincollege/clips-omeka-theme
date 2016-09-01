@@ -84,7 +84,8 @@ foreach($films as $film) {
 <option disabled="disabled" selected="selected">Titles</option>
 <?php 
 	$sortedFilmTitles = $filmTitles;
-	sort($sortedFilmTitles);
+	echo "<!--";
+	asort($sortedFilmTitles); /* asort() maintains the indexes of the items */
 	foreach ($sortedFilmTitles as $filmId => $filmTitle) {
 		echo "<option value=\"$filmId\">$filmTitle</option>\n";	
 	}
