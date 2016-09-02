@@ -34,8 +34,11 @@ $filmGenres = array();
 $tagCountsByFilm = array();
 $allItemsByFilm = array();
 
-$films = get_records('Collection');
+$films = get_records('Collection', array('public' => true), 0);
 foreach($films as $film) {
+	echo "\n<!-- TITLE:", metadata($film, array('Dublin Core', 'Title'), array('snippet' => 32)),
+		" -- CREATOR:", metadata($film, array('Dublin Core', 'Creator'), array('snippet' => 32)), " -->";
+
 	if (is_object($film)) {
 		if ($featuredItems = get_records('Item', array('collection' => $film->id, 'featured' => true), 1)) {
 			if($filmTitle = metadata($film, array('Dublin Core', 'Title'), array('snippet' => 32))) {
@@ -48,7 +51,7 @@ foreach($films as $film) {
 				$filmGenres = array_merge($filmGenres, $filmGenre);
 			}
 			
-			$allItemsByFilm[$film->id] = get_records('Item', array('collection' => $film->id));
+			$allItemsByFilm[$film->id] = get_records('Item', array('collection' => $film->id), 0);
 			
 			foreach ($allItemsByFilm[$film->id] as $item) {
 				tallyTags($item, $tagCountsByFilm);	
@@ -84,8 +87,7 @@ foreach($films as $film) {
 <option disabled="disabled" selected="selected">Titles</option>
 <?php 
 	$sortedFilmTitles = $filmTitles;
-	echo "<!--";
-	asort($sortedFilmTitles); /* asort() maintains the indexes of the items */
+	asort($sortedFilmTitles);  /* asort() maintains the indexes of the items */
 	foreach ($sortedFilmTitles as $filmId => $filmTitle) {
 		echo "<option value=\"$filmId\">$filmTitle</option>\n";	
 	}
