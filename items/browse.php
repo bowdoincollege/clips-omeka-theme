@@ -15,6 +15,9 @@ foreach (loop('items') as $item) {
 	if ($files = $item->getFiles()) {	
 	
 		$film = get_collection_for_item();
+		if ($film == null) {
+			continue;
+		}
 		if (!isset($films[$film->id])) {
 			$films[$film->id] = $film;
 		}

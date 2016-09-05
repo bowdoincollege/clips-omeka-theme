@@ -54,9 +54,9 @@ jQuery(function() {
 		ePlayer.find('svg').click(function() {
 			ePlayer.hide().html('');
 			jQuery(e).removeClass('playing');
-			//eInfo.show(); 
+			eTags.show();
 		});
-	    //eInfo.hide();
+	    eTags.hide();
     };
     
     AC.gotoFilm = function(i) {	    
