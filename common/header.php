@@ -36,9 +36,6 @@ $allItemsByFilm = array();
 
 $films = get_records('Collection', array('public' => true), 0);
 foreach($films as $film) {
-	echo "\n<!-- TITLE:", metadata($film, array('Dublin Core', 'Title'), array('snippet' => 32)),
-		" -- CREATOR:", metadata($film, array('Dublin Core', 'Creator'), array('snippet' => 32)), " -->";
-
 	if (is_object($film)) {
 		if ($featuredItems = get_records('Item', array('collection' => $film->id, 'featured' => true), 1)) {
 			if($filmTitle = metadata($film, array('Dublin Core', 'Title'), array('snippet' => 32))) {

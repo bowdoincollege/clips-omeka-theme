@@ -1,9 +1,6 @@
 <?php echo head(); ?>
 
-
-
 <?php
-
 $films = array();
 $tagCounts = array();
 $clips = array();
@@ -16,6 +13,9 @@ foreach (loop('items') as $item) {
 	
 		$film = get_collection_for_item();
 		if ($film == null) {
+			continue;
+		}
+		if (metadata('item', 'public') == false) {
 			continue;
 		}
 		if (!isset($films[$film->id])) {

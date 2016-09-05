@@ -8,13 +8,13 @@
 
 $tagCounts = array();
 
-$films = get_records('Collection');
+$films = get_records('Collection', array('public' => true), 0);
 foreach ($films as $film) {
 
 	if (is_object($film)) {
 
-		$items = get_records('Item', array('collection' => $film->id, 'featured' => true), 1);	
-		$allItems = get_records('Item', array('collection' => $film->id));
+		$items = get_records('Item', array('collection' => $film->id, 'featured' => true, 'public' => true), 1);
+		$allItems = get_records('Item', array('collection' => $film->id, 'public' => true));
 	
 		if (count($items) === 0 && $allItems) {
 			$items = array($allItems[0]);
