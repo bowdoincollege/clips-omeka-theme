@@ -64,7 +64,9 @@ if (get_theme_option('Homepage Text')) {
 ?>
 </div>
 
+<div id="c-tags">
 <?php tagCloud($tagCounts); ?>
+</div>
 
 </div>
 

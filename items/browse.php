@@ -53,12 +53,12 @@ foreach (loop('items') as $item) {
 		$clips[$item->id] .= ">\n";
 		
 		if($filmTitle = metadata($film, array('Dublin Core', 'Title'))) {
-			$clips[$item->id] .=  '<h3>' . $filmTitle . "</h3>\n";
+			$clips[$item->id] .=  '<h3 class="f-title">' . $filmTitle . "</h3>\n";
 		}	
 	
 		$clips[$item->id] .= "$start<div><h1>" . metadata('item', array('Dublin Core', 'Title')) . "</h1>\n";
 		if ($description = metadata('item', array('Dublin Core', 'Description'), array('snippet'=>150))) {
-			$clips[$item->id] .= '<div>' . $description . "</div>\n";
+			$clips[$item->id] .= '<div class="f-description">' . $description . "</div>\n";
 		}
 
 		$clips[$item->id] .= '<div class="f-tags"><ul>';

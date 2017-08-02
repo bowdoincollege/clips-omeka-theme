@@ -44,6 +44,10 @@ jQuery(function() {
 	   jQuery(e).addClass('playing');
 
 		jQuery('#f-tags').remove();
+		jQuery('#f-description').remove();
+
+		var filmInfo = jQuery(e).find('.f-description').clone();
+
 		var filmTags = jQuery(e).find('.f-tags').clone();
 		filmTags.attr('id', 'f-tags').show();
 		filmTags.find('li').each(function() {
@@ -65,6 +69,7 @@ jQuery(function() {
 			ePlayer.hide().html('');
 			jQuery(e).removeClass('playing');
 			jQuery('#f-tags').remove();
+			jQuery('#f-description').remove();
 			eTags.show();
 		});
 	    eTags.hide();
