@@ -60,6 +60,14 @@ foreach (loop('items') as $item) {
 		if ($description = metadata('item', array('Dublin Core', 'Description'), array('snippet'=>150))) {
 			$clips[$item->id] .= '<div>' . $description . "</div>\n";
 		}
+
+		$itemTags = array();
+		tallyTags($item, $itemTags);
+		ob_start();
+		tagCloud($itemTags);
+		$clips[$item->id] .= ob_get_contents();
+		ob_end_clean();
+
 		$clips[$item->id] .= "\n</div></div></td>\n";
 	}
 	
