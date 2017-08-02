@@ -220,6 +220,10 @@ body.exhibits #c-exhibits-menu span {
 	
 }
 
+.c-film .f-tags {
+	display: none;
+}
+
 .c-single-film h2 {
 	top:0;
 }
@@ -352,10 +356,26 @@ svg line {
 	opacity:1.0;
 }
 
+#f-tags {
+	padding:16px 48px 0 48px;
+	max-width:720px;
+	margin:0 auto;
+}
+
+#f-tags ul {
+    list-style:none;
+}
+
+#f-tags ul li {
+	display: inline;
+	padding-left:0;
+}
+
 #c-tags {
 	padding:50px 0 0 0;
 }
 
+#f-tags *,
 #c-tags * {
 	font-weight: normal;
 	margin:0;
@@ -364,6 +384,7 @@ svg line {
 	
 }
 
+#f-tags li:hover,
 #c-tags h1:hover,
 #c-tags h2:hover,
 #c-tags h3:hover,
@@ -374,6 +395,7 @@ svg line {
 	color:#ff3557;
 }
 
+#f-tags li,
 #c-tags li {
 	padding:0 5px;
 	clear:both;

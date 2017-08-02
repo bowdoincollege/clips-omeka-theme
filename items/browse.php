@@ -61,13 +61,12 @@ foreach (loop('items') as $item) {
 			$clips[$item->id] .= '<div>' . $description . "</div>\n";
 		}
 
-		$itemTags = array();
-		tallyTags($item, $itemTags);
-		ob_start();
-		tagCloud($itemTags);
-		$clips[$item->id] .= '<div class="f-tags" style="display: none;">' . ob_get_contents() . '</div>';
-		ob_end_clean();
-
+		$clips[$item->id] .= '<div class="f-tags"><ul>';
+		$itemTags = $item->getTags();
+		foreach($itemTags as $tag) {
+			$clips[$item->id] .= '<li>' . $tag . '</li>';
+		}
+		$clips[$item->id] .= '</ul></div>';
 		$clips[$item->id] .= "\n</div></div></td>\n";
 	}
 	

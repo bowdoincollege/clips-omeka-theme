@@ -42,8 +42,15 @@ jQuery(function() {
 	   
 	   jQuery('.c-film').removeClass('playing');
 	   jQuery(e).addClass('playing');
+
+		jQuery('#f-tags').remove();
 		var filmTags = jQuery(e).find('.f-tags').clone();
 		filmTags.attr('id', 'f-tags').show();
+		filmTags.find('li').each(function() {
+			var e =  jQuery(this);
+	    	e.click(function() { AC.gotoTag(e.text()); });
+    	});
+
 		jQuery('#c-tags').after(filmTags);
 
 	    ePlayer.show().html(
