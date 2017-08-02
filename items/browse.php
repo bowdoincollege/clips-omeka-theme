@@ -65,7 +65,7 @@ foreach (loop('items') as $item) {
 		tallyTags($item, $itemTags);
 		ob_start();
 		tagCloud($itemTags);
-		$clips[$item->id] .= ob_get_contents();
+		$clips[$item->id] .= '<div class="f-tags" style="display: none;">' . ob_get_contents() . '</div>';
 		ob_end_clean();
 
 		$clips[$item->id] .= "\n</div></div></td>\n";
@@ -163,7 +163,9 @@ if (isset($_REQUEST['tags'])) {
 ?>
 </div>
 
+<div id="c-tags">
 <?php tagCloud($tagCounts); ?>
+</div>
 
 </div>
 

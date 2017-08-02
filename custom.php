@@ -20,7 +20,7 @@ function tagCloud($tagCounts) {
 
 ?>
 
-<div id="c-tags">
+<div class="c-tags">
 	<ul class="c-tags-right">
 		<li>
 			<h3><?php echo $t[2]; ?></h3>

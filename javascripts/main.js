@@ -42,6 +42,9 @@ jQuery(function() {
 	   
 	   jQuery('.c-film').removeClass('playing');
 	   jQuery(e).addClass('playing');
+		var filmTags = jQuery(e).find('.f-tags').clone();
+		filmTags.attr('id', 'f-tags').show();
+		jQuery('#c-tags').after(filmTags);
 
 	    ePlayer.show().html(
 	    	'<div id="c-close"><svg viewBox="0 0 8 8"><path d="M4 0c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm-1.5 1.78l1.5 1.5 1.5-1.5.72.72-1.5 1.5 1.5 1.5-.72.72-1.5-1.5-1.5 1.5-.72-.72 1.5-1.5-1.5-1.5.72-.72z" /></svg></div><video controls="controls"><source src="/files/original/' + u + '" type="video/mp4" />' +
@@ -54,6 +57,7 @@ jQuery(function() {
 		ePlayer.find('svg').click(function() {
 			ePlayer.hide().html('');
 			jQuery(e).removeClass('playing');
+			jQuery('#f-tags').remove();
 			eTags.show();
 		});
 	    eTags.hide();
