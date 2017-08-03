@@ -66,10 +66,6 @@ foreach($films as $film) {
 
 <div id="c-title">
 <?php echo link_to_home_page(theme_logo()); ?>
-<!--
-<a href="/"><?php echo(option('site_title')); ?></a>
-	<a href="/">Bowdoin <em>Digital</em> <strong>Clip</strong> <span>Archive</span></a>
--->
 <div id="c-exhibits-menu"><a href="/exhibits">Exhibits</a> <span>&#8594;</span></div>
 </div>
 
