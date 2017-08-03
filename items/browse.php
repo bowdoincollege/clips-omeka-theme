@@ -133,32 +133,32 @@ if (isset($_REQUEST['tags'])) {
 	$film = array_pop($films);
 	
 	if($filmTitle = metadata($film, array('Dublin Core', 'Title'))) {
-		echo '<h1>' . $filmTitle . "</h1>\n";
+		echo '<h1 class="c-title">' . $filmTitle . "</h1>\n";
 	}
 	
 	if($filmYear = metadata($film, array('Dublin Core', 'Date'))) {	
-		echo "<h4>Year: <span>$filmYear</span></h4>\n";	
+		echo "<h4 class=\"c-year\">Year: <span>$filmYear</span></h4>\n";
 	}
 	
 	if($filmDirector = metadata($film, array('Dublin Core', 'Creator'))) {
-		echo "<h4>Director: <span>$filmDirector</span></h4>\n";
+		echo"<h4 class=\"c-director\">Director: <span>$filmDirector</span></h4>\n";
 	}
 	
 	if($filmGenre = metadata($film, array('Dublin Core', 'Subject'), array('all' => true))) {
 		$filmGenres = implode(' &sdot; ', $filmGenre);
-		echo "<h4>Genre: <span>$filmGenres</span></h4>\n";
+		echo "<h4 class=\"c-genre\">Genre: <span>$filmGenres</span></h4>\n";
 	}
 	
 	if($filmStudio = metadata($film, array('Dublin Core', 'Publisher'))) {
-		echo "<h4>Studio: <span>$filmStudio</span></h4>\n";
+		echo "<h4 class=\"c-studio\">Studio: <span>$filmStudio</span></h4>\n";
 	}
 	
 	if($filmContributor = metadata($film, array('Dublin Core', 'Contributor'))) {
-		echo "<h4>Contributed by: <span>$filmContributor</span></h4>\n";
+		echo "<h4 class=\"c-contributor\">Contributed by: <span>$filmContributor</span></h4>\n";
 	}
 
 	if($filmDescription = metadata($film, array('Dublin Core', 'Description'))) {
-		echo '<p>' . $filmDescription . '</p>';
+		echo "<p class=\"c-description\">$filmDescription</p>";
 	}	
 
 	

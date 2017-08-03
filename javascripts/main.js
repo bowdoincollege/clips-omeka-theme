@@ -57,7 +57,7 @@ jQuery(function() {
 		filmDescription = jQuery("<p></p>").text(filmDescription.text());
 		filmDescription.attr('id', 'f-description').show();
 		jQuery('#c-metadata').append(filmDescription);
-
+		
 	    ePlayer.show().html(
 	    	'<div id="c-close"><svg viewBox="0 0 8 8"><path d="M4 0c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm-1.5 1.78l1.5 1.5 1.5-1.5.72.72-1.5 1.5 1.5 1.5-.72.72-1.5-1.5-1.5 1.5-.72-.72 1.5-1.5-1.5-1.5.72-.72z" /></svg></div><video controls="controls"><source src="/files/original/' + u + '" type="video/mp4" />' +
 	    '<object width="320" height="240" type="application/x-shockwave-flash" data="flashmediaelement.swf">' +
@@ -71,8 +71,10 @@ jQuery(function() {
 			jQuery(e).removeClass('playing');
 			jQuery('#f-tags').remove();
 			jQuery('#f-description').remove();
+			jQuery('.c-description').show();
 			eTags.show();
 		});
+		jQuery('.c-description').hide();
 	    eTags.hide();
     };
     

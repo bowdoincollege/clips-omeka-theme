@@ -368,8 +368,17 @@ svg line {
 
 #f-tags ul li {
 	display: inline;
+	padding:0 0.5em 0 0.5em;
+}
+
+#f-tags ul li:first-child {
 	padding-left:0;
 }
+
+#f-tags ul li:last-child {
+	padding-right:0;
+}
+
 
 #c-tags {
 	padding:50px 0 0 0;
@@ -517,6 +526,10 @@ body.exhibits p {
 .image-text-group {
 	margin:0 0 32px 0;
 	border-top:1px solid #888;
+}
+
+footer {
+	padding: 1em;
 }
 
 footer .contact {
