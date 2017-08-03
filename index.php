@@ -61,8 +61,7 @@ foreach ($films as $film) {
 if (option('description')) {
 	echo '<p>' . option('description') . "</p>\n";
 } 
-?>
-<?php 
+
 if (get_theme_option('Homepage Text')) {
 	echo '<p>' . get_theme_option('Homepage Text') . "</p>\n";
 } 

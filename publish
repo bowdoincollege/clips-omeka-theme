@@ -1,6 +1,0 @@
-#!/bin/bash
-#
-# Short script to rsync changes to production server
-#
-rsync -av --no-owner --no-group --exclude publish * prod-omekaclips-a:/var/www/html/themes/clips/
-
