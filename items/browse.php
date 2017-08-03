@@ -153,6 +153,10 @@ if (isset($_REQUEST['tags'])) {
 		echo "<h4>Studio: <span>$filmStudio</span></h4>\n";
 	}
 	
+	if($filmContributor = metadata($film, array('Dublin Core', 'Contributor'))) {
+		echo "<h4>Contributed by: <span>$filmContributor</span></h4>\n";
+	}
+
 	if($filmDescription = metadata($film, array('Dublin Core', 'Description'))) {
 		echo '<p>' . $filmDescription . '</p>';
 	}	
