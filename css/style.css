@@ -519,6 +519,13 @@ body.exhibits p {
 	border-top:1px solid #888;
 }
 
+footer .contact {
+	float: left;
+}
+footer .copyright {
+	float: right;
+}
+
 /*
 .browse .exhibit {
   clear: both;
