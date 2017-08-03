@@ -56,7 +56,7 @@ foreach ($films as $film) {
 <div id="c-info">
 
 <div id="c-metadata">
-<h1>Bowdoin Digital Clip Archive</h1>
+<h1><?php echo link_to_home_page(theme_logo()); ?></h1>
 <?php 
 if (get_theme_option('Homepage Text')) {
 	echo '<p>' . get_theme_option('Homepage Text') . "</p>\n";

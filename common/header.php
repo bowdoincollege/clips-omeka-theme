@@ -65,7 +65,11 @@ foreach($films as $film) {
 <?php echo body_tag(array('id' => @$bodyid, 'class' => @$bodyclass)); ?>
 
 <div id="c-title">
-<a href="/">Bowdoin <em>Digital</em> <strong>Clip</strong> <span>Archive</span></a>
+<?php echo link_to_home_page(theme_logo()); ?>
+<!--
+<a href="/"><?php echo(option('site_title')); ?></a>
+	<a href="/">Bowdoin <em>Digital</em> <strong>Clip</strong> <span>Archive</span></a>
+-->
 <div id="c-exhibits-menu"><a href="/exhibits">Exhibits</a> <span>&#8594;</span></div>
 </div>
 
