@@ -153,8 +153,9 @@ if (isset($_REQUEST['tags'])) {
 		echo "<h4 class=\"c-studio\">Studio: <span>$filmStudio</span></h4>\n";
 	}
 	
-	if($filmContributor = metadata($film, array('Dublin Core', 'Contributor'))) {
-		echo "<h4 class=\"c-contributor\">Contributed by: <span>$filmContributor</span></h4>\n";
+	if($filmContributor = metadata($film, array('Dublin Core', 'Contributor'), array('all' => true))) {
+		$filmContributors = implode(' &sdot; ', $filmContributor);
+		echo "<h4 class=\"c-contributor\">Contributed by: <span>$filmContributors</span></h4>\n";
 	}
 
 	if($filmDescription = metadata($film, array('Dublin Core', 'Description'))) {
